@@ -1,0 +1,37 @@
+{% extends "contenido/encabezado.html" %}
+{% load static %}
+
+{% block titulo %}Inicio{% endblock %}
+
+{% block imagen %}
+<img src="{% static 'inicio/images/registrar.png' %}" class="img-fluid mx-auto d-block" style="max-height: 120px;" alt="Inicio">
+{% endblock %}
+
+{% block titulo_principal %}
+Bienvenido <span>Cursos del Django</span>
+{% endblock %}
+
+{% block url %}
+<div class="breadcrumb-line">
+  <ul class="breadcrumb">
+    <a href="{% url 'Principal' %}">
+      {% if request.path == '/' %}
+        Inicio
+      {% else %}
+        Inicio{{ request.path }}
+      {% endif %}
+    </a>
+  </ul>
+</div>
+{% endblock %}
+
+{% block contenido %}
+<div class="page-header">
+  <div class="page-title">
+    <h3>Bienvenido a este Cursos de Django</h3>
+    <small>Explora nuestros recursos para aprender desarrollo web</small>
+  </div>
+</div>
+
+<p class="lead">Aquí puedes aprender desde HTML hasta Django para principiante, con una estructura organizada, moderna y profesional.</p>
+{% endblock %}
